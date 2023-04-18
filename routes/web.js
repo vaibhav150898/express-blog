@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const FrontController = require('../controllers/Frontcontroller')
+const FrontController = require('../controllers/FrontController')
 const AboutController = require('../controllers/admin/AboutController')
 const AdminController = require('../controllers/admin/admincontrollers')
 const BlogController = require('../controllers/admin/BlogControllers')

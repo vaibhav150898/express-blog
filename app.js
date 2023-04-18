@@ -7,6 +7,7 @@ var session = require('express-session')
 var flash = require('connect-flash');
 const router = require('./routes/web')
 const cookieParser = require('cookie-parser')
+const MemoryStore=require('memorystore')(session)
 app.use(cookieParser())
 
 
@@ -25,12 +26,25 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}))
 
 //message
-app.use(session({
-  secret: 'secret',
-  cookie: { maxAge: 60000 },
-  resave: false,
-  saveUninitialized: false,
+// app.use(session({
+//   secret: 'secret',
+//   cookie: { maxAge: 60000 },
+//   resave: false,
+//   saveUninitialized: false,
   
+// }));
+
+app.use(session({
+  // secret: 'secret',
+  // cookie: { maxAge: 60000 },
+  // resave: false,
+  // saveUninitialized: false,
+  cookie: { maxAge: 86400000 },
+  store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+  }),
+  resave: false,
+  secret: 'keyboard cat'
 }));
 
 app.use(flash());
