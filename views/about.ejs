@@ -1,0 +1,15 @@
+<%-  include('header.ejs')%>
+
+<section class="cmspage mtb-40">
+    <div class="container">
+      <h1>About</h1>
+      <% vasu.forEach((item)=>{%>
+       <div class="page-desc">
+        <p><%=item.description%></p>
+      </div>
+    <% })%>
+</section>
+
+
+
+<%-  include('footer.ejs')%>

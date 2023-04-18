@@ -1,0 +1,60 @@
+<%-  include('../../header.ejs')%>
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li><a href="/admin/blogdisplay" >Blogs</a></li>
+                            <li><a href="/admin/categorydisplay" class="active">Categories</a></li>
+                            <li><a href="/admin/contactdisplay">Contact</a></li>
+                            <li><a href="/admin/aboutdisplay">About</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>category view</h1>
+                            </div>
+                            <div class="dash-nav">
+                                <!-- <a href="/admin/createblog" class="btn btn-success">Add Category</a> -->
+                                <!-- <button type="button" class="btn btn-outline-info" data-toggle="modal"
+                                        data-target="#exampleModal" style="background-color: aqua; border: black;">Add Category</button> -->
+                            </div>
+                        </div>
+
+                        
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>S.No</th>
+                                <th>Image</th>
+                                <th>catname</th>
+                                <!-- <th>description</th> -->
+                                
+                                <!-- <th>Action</th> -->
+                            </tr>
+                         
+
+                            <% i=1 %>
+                                <tr>
+                                    <td><%= i++ %></td>
+                                    <td><img src="<%= b.image.url %>" width="50px"></td>
+                                    <td><%= b.catname %></td>
+                                    
+                                    
+                                </tr>
+                                
+                                
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%-  include('../../footer.ejs')%>

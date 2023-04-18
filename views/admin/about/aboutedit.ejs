@@ -1,0 +1,58 @@
+<%-  include('../../header.ejs')%>
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li><a href="/admin/blogdisplay" >Blogs</a></li>
+                            <li><a href="/admin/categorydisplay">Categories</a></li>
+                            <li><a href="/admin/contactdisplay">Contact</a></li>
+                            <li><a href="/admin/aboutdisplay" class="active">About</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>About Edit</h1>
+                            </div>
+                            <div class="dash-nav">
+                                <!-- <a href="/admin/createblog" class="btn btn-success">Add Blog</a> -->
+
+                                <!-- <button type="button" class="btn btn-outline-info" data-toggle="modal"
+                                        data-target="#exampleModal" style="background-color: aqua; border: black;">Add Blog</button> -->
+                            </div>
+                        </div>
+
+                        <form method="post" action="/aboutupdate/<%=vv._id%>" >
+                            
+                           
+                            <div class="form-group form-row">
+                                <label class="col-md-3 required">Description *</label>
+                                <div class="col-md-9">
+                                  <textarea name="description" rows="5" class="form-control" placeholder="Description" required ><%=vv.description%></textarea>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="form-group form-row">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <!-- <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">close</button> -->
+                                <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </div>
+                          
+
+                        
+                    </form>
+
+                        
+</section>
+<%-  include('../../footer.ejs')%>

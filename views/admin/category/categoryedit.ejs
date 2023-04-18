@@ -1,0 +1,70 @@
+<%-  include('../../header.ejs')%>
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li><a href="/admin/blogdisplay" >Blogs</a></li>
+                            <li><a href="/admin/categorydisplay" class="active">Categories</a></li>
+                            <li><a href="/admin/contactdisplay">Contact</a></li>
+                            <li><a href="/admin/aboutdisplay">About</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>category Edit</h1>
+                            </div>
+                            </div>
+
+                            <form method="post" action="/categoryupdate/<%= b._id %>"  enctype="multipart/form-data">
+                                
+                                <div class="form-group form-row">
+                                    <label class="col-md-3 required">catname *</label>
+                                    <div class="col-md-9">
+                                      <input type="text" class="form-control" name="catname" value="<%= b.catname %>" placeholder="catname" required >
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group form-row">
+                                  <label class="col-md-3">Upload Image</label>
+                                  <div class="col-md-9">
+                                    <input type="file" id="image" />
+                                  </div>
+                                </div> -->
+                                <div class="form-group form-row">
+                                    <label class="col-md-3 required">Upload Image *</label>
+                                    <div class="col-md-9">
+                                      <input type="file"  name="image" class="form-control" formControlName="image">
+                                      <br>
+                                      <img src="<%= b.image.url %>" width="50px">
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group form-row">
+                                    <label class="col-md-3 required">Description *</label>
+                                    <div class="col-md-9">
+                                      <textarea name="description" rows="5" class="form-control" placeholder="Description" required ></textarea>
+                                    </div>
+                                </div> -->
+                                
+                                <div class="form-group form-row">
+                                    <label class="col-md-3"></label>
+                                    <div class="col-md-9">
+                                        <!-- <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">close</button> -->
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    </div>
+                                </div>
+                              
+
+                            
+                        </form>
+
+                        
+</section>
+<%-  include('../../footer.ejs')%>
