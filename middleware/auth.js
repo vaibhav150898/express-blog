@@ -10,7 +10,7 @@ const admin_auth = async (req, res, next) => {
     //console.log(verify_token)
     const admin_data = await AdminModel.findOne({ _id: verify_token.id });
     //console.log(admin_data);
-    req.admin = admin_data
+    req.admin = admin_data;
     next();
   } catch (error) {
     console.log(error);

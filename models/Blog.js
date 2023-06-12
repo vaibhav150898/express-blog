@@ -1,32 +1,30 @@
-const mongoose =require('mongoose')
+const mongoose = require("mongoose");
 
-// define schema 
-const blogSchema=new mongoose.Schema({
-    title:{
-        type:String,
-        required:true
+// define schema
+const blogSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
     },
-    description:{
-        type:String,
-        required:true
+    description: {
+      type: String,
+      required: true,
     },
-    image:    
-    {
+    image: {
       public_id: {
         type: String,
-        
       },
       url: {
         type: String,
-         
       },
     },
-},{timestamps:true})
+  },
+  { timestamps: true }
+);
 
+// create collection
+const BlogModel = mongoose.model("blog", blogSchema);
+//                                ^ collection name
 
-// create collection             
-const BlogModel= mongoose.model('blog',blogSchema)
-//                                ^ collection name  
-
-
-module.exports=BlogModel
+module.exports = BlogModel;

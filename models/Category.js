@@ -1,29 +1,26 @@
-const mongoose =require('mongoose')
+const mongoose = require("mongoose");
 
-// define schema 
-const CategorySchema=new mongoose.Schema({
-    catname:{
-        type:String,
-        required:true
+// define schema
+const CategorySchema = new mongoose.Schema(
+  {
+    catname: {
+      type: String,
+      required: true,
     },
-    image:    
-    {
+    image: {
       public_id: {
         type: String,
-        
       },
       url: {
         type: String,
-         
       },
     },
-    
-},{timestamps:true})
+  },
+  { timestamps: true }
+);
 
+// create collection
+const CategoryModel = mongoose.model("category", CategorySchema);
+//                                ^ collection name
 
-// create collection             
-const CategoryModel= mongoose.model('category',CategorySchema)
-//                                ^ collection name  
-
-
-module.exports=CategoryModel
+module.exports = CategoryModel;

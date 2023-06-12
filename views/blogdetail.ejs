@@ -29,34 +29,42 @@
       </div>
       <div class="col-md-4">
         <div class="blog-right">
-            <div class="right-widget recent-post">
-                <h3>Recent Blogs</h3>
-                <% recentblog.forEach((items)=>{ %>
-                
-                <a href="/detail/<%= items._id %>">
-                    <div class="rb-box">
-                        <div class="rb-box-img">
-                            <img src="<%= items.image.url %>" width="100px" height="67px"  alt="blog1" />
-                        </div>
-                        <div class="rb-box-desc">
-                            <h4><%= items.title  %></h4>
-                            <p><%= items.createdAt.toLocaleDateString() %></p>
-                        </div>
-                    </div>
-                </a>
-                <% }) %>
-            </div>
-            <div class="right-widget categories">
-                <h3>Categories</h3>
-                <ul>
-                    <% cat.forEach((item)=>{ %>
+          <div class="right-widget recent-post">
+            <h3>Recent Blogs</h3>
+            <% recentblog.forEach((items)=>{ %>
 
-                    
-                   <li><a href="/detailbycat/<%= item.category_name %>"><%= item.catname %></a></li>
-                  
-               <%    }) %>
-               </ul>
-            </div>
+            <a href="/detail/<%= items._id %>">
+              <div class="rb-box">
+                <div class="rb-box-img">
+                  <img
+                    src="<%= items.image.url %>"
+                    width="100px"
+                    height="67px"
+                    alt="blog1"
+                  />
+                </div>
+                <div class="rb-box-desc">
+                  <h4><%= items.title %></h4>
+                  <p><%= items.createdAt.toLocaleDateString() %></p>
+                </div>
+              </div>
+            </a>
+            <% }) %>
+          </div>
+          <div class="right-widget categories">
+            <h3>Categories</h3>
+            <ul>
+              <% cat.forEach((item)=>{ %>
+
+              <li>
+                <a href="/detailbycat/<%= item.category_name %>"
+                  ><%= item.catname %></a
+                >
+              </li>
+
+              <% }) %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

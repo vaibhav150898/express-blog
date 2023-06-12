@@ -1,11 +1,10 @@
-const ContactModel = require("../../models/fcontact")
+const ContactModel = require("../../models/fcontact");
 
-class ContactController{
-    static contactdisplay=async(req,res)=>{
-       const contact = await ContactModel.find().sort({_id:-1}).limit(6)
+class ContactController {
+  static contactdisplay = async (req, res) => {
+    const contact = await ContactModel.find().sort({ _id: -1 }).limit(6);
     //    console.log(contact)
-        res.render('admin/contact/contactdisplay',{fc:contact})
-
-    }
+    res.render("admin/contact/contactdisplay", { fc: contact });
+  };
 }
-module.exports=ContactController
+module.exports = ContactController;
